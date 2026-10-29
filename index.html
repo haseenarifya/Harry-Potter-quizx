@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts Trivia | Harry Potter Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="site-header">
+      <div class="crest" aria-hidden="true">✦</div>
+      <p class="eyebrow">THE WIZARDING WORLD PRESENTS</p>
+      <h1>Hogwarts <span>Trivia</span></h1>
+      <p class="subtitle">
+        A magical test of your Harry Potter knowledge
+      </p>
+    </header>
+
+    <section class="quiz-card" aria-labelledby="quiz-heading">
+      <div class="top-row">
+        <span class="pill">20 Questions</span>
+        <span id="progress-label">Question 1 of 20</span>
+      </div>
+
+      <div class="progress-track" id="progress-track"
+           role="progressbar" aria-label="Quiz progress"
+           aria-valuemin="0" aria-valuemax="20" aria-valuenow="1">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div id="quiz-panel">
+        <p class="question-number" id="question-number">QUESTION 01</p>
+        <h2 id="quiz-heading">Loading question...</h2>
+        <div class="options" id="options"></div>
+        <p class="selection-note" id="selection-note" aria-live="polite">
+          Choose one answer to continue.
+        </p>
+
+        <div class="button-row">
+          <button class="button button-quiet" id="back-btn"
+                  type="button" disabled>← Back</button>
+          <button class="button button-gold" id="next-btn"
+                  type="button" disabled>Next question →</button>
+        </div>
+      </div>
+
+      <section id="results-panel" class="results-panel"
+               hidden aria-live="polite">
+        <div class="result-star" aria-hidden="true">✧</div>
+        <p class="eyebrow">QUIZ COMPLETE</p>
+        <h2 id="result-title">Your Hogwarts result</h2>
+        <p class="score" id="score">0 / 20</p>
+        <p class="result-message" id="result-message"></p>
+
+        <div class="result-actions">
+          <button class="button button-gold" id="restart-btn"
+                  type="button">↻ Try again</button>
+        </div>
+
+        <h3 class="review-heading">Answer review</h3>
+        <p class="review-intro">
+          Check your answers and see the correct ones below.
+        </p>
+        <div id="review-list" class="review-list"></div>
+      </section>
+    </section>
+
+    <footer>
+      <p>✨ Keep your wand ready and your curiosity alive. ✨</p>
+      <p class="footer-small">
+        A fan-made trivia experience. Not affiliated with the Harry Potter franchise.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
